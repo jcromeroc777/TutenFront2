@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
+import Container from '@material-ui/core/Container';
+
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+
+// pick a date util library
+import DateFnsUtils from '@date-io/date-fns';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <header>
+        <Header/>
       </header>
-    </div>
+      <main>
+        <Container fixed>
+          <Main/>
+        </Container>
+      </main>
+    </MuiPickersUtilsProvider>
   );
 }
 
